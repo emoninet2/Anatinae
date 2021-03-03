@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      hr193
+HostName                       DESKTOP-FVJSSOK
+ProcessIdentifier              9656
+ProcessCreationTime_UTC        1614803741
+ProcessCreationTime_Readable   Wed Mar  3 21:35:41 2021 W. Europe Standard Time
+AppIdentifier                  OA File System Design Manager
+OSType                         win32
+ReasonForPlacingEditLock       OpenAccess edit lock
+FilePathUsedToEditLock         C:\Users\hr193\ads\Anatinae\Anatinae_lib\main\layout\layout.oa.cdslck
+TimeEditLocked                 Wed Mar  3 21:52:37 2021 W. Europe Standard Time
