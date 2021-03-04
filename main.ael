@@ -552,7 +552,7 @@ defun main(Radius,Thickness,Spacing,RingCount,Gap, Ext){
 
 	HC_setDrawingLayer(1);
 	
-	return;
+
 	
 	
 	

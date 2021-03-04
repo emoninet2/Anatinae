@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Vias>
+<Vias Version="1000">
+ <Via Name="via9">
+  <DefaultPad>
+   <Pad Type="Square">
+    <Width Unit="um">3</Width>
+   </Pad>
+   <Thermal Type="Full"/>
+   <KeepOut Type="Add">
+    <Exp Unit="um">3</Exp>
+   </KeepOut>
+   <AntiPad Type="SameAsKeepout"/>
+  </DefaultPad>
+  <Drill Type="Square">
+   <Size Unit="um">0</Size>
+  </Drill>
+ </Via>
+ <Via Name="via8">
+  <DefaultPad>
+   <Pad Type="Square">
+    <Width Unit="um">.36</Width>
+   </Pad>
+   <Thermal Type="Full"/>
+   <KeepOut Type="Add">
+    <Exp Unit="um">.34</Exp>
+   </KeepOut>
+   <AntiPad Type="SameAsKeepout"/>
+  </DefaultPad>
+  <Drill Type="Square">
+   <Size Unit="um">0</Size>
+  </Drill>
+ </Via>
+ <Via Name="via7">
+  <DefaultPad>
+   <Pad Type="Square">
+    <Width Unit="um">.36</Width>
+   </Pad>
+   <Thermal Type="Full"/>
+   <KeepOut Type="Add">
+    <Exp Unit="um">.34</Exp>
+   </KeepOut>
+   <AntiPad Type="SameAsKeepout"/>
+  </DefaultPad>
+  <Drill Type="Square">
+   <Size Unit="um">0</Size>
+  </Drill>
+ </Via>
+ <Via Name="via6">
+  <DefaultPad>
+   <Pad Type="Square">
+    <Width Unit="um">.1</Width>
+   </Pad>
+   <Thermal Type="Full"/>
+   <KeepOut Type="Add">
+    <Exp Unit="um">.1</Exp>
+   </KeepOut>
+   <AntiPad Type="SameAsKeepout"/>
+  </DefaultPad>
+  <Drill Type="Square">
+   <Size Unit="um">0</Size>
+  </Drill>
+ </Via>
+ <Via Name="via5">
+  <DefaultPad>
+   <Pad Type="Square">
+    <Width Unit="um">.1</Width>
+   </Pad>
+   <Thermal Type="Full"/>
+   <KeepOut Type="Add">
+    <Exp Unit="um">.1</Exp>
+   </KeepOut>
+   <AntiPad Type="SameAsKeepout"/>
+  </DefaultPad>
+  <Drill Type="Square">
+   <Size Unit="um">0</Size>
+  </Drill>
+ </Via>
+ <Via Name="via4">
+  <DefaultPad>
+   <Pad Type="Square">
+    <Width Unit="um">.1</Width>
+   </Pad>
+   <Thermal Type="Full"/>
+   <KeepOut Type="Add">
+    <Exp Unit="um">.1</Exp>
+   </KeepOut>
+   <AntiPad Type="SameAsKeepout"/>
+  </DefaultPad>
+  <Drill Type="Square">
+   <Size Unit="um">0</Size>
+  </Drill>
+ </Via>
+ <Via Name="via3">
+  <DefaultPad>
+   <Pad Type="Square">
+    <Width Unit="um">.1</Width>
+   </Pad>
+   <Thermal Type="Full"/>
+   <KeepOut Type="Add">
+    <Exp Unit="um">.1</Exp>
+   </KeepOut>
+   <AntiPad Type="SameAsKeepout"/>
+  </DefaultPad>
+  <Drill Type="Square">
+   <Size Unit="um">0</Size>
+  </Drill>
+ </Via>
+ <Via Name="via2">
+  <DefaultPad>
+   <Pad Type="Square">
+    <Width Unit="um">.1</Width>
+   </Pad>
+   <Thermal Type="Full"/>
+   <KeepOut Type="Add">
+    <Exp Unit="um">.1</Exp>
+   </KeepOut>
+   <AntiPad Type="SameAsKeepout"/>
+  </DefaultPad>
+  <Drill Type="Square">
+   <Size Unit="um">0</Size>
+  </Drill>
+ </Via>
+ <Via Name="via1">
+  <DefaultPad>
+   <Pad Type="Square">
+    <Width Unit="um">.1</Width>
+   </Pad>
+   <Thermal Type="Full"/>
+   <KeepOut Type="Add">
+    <Exp Unit="um">.1</Exp>
+   </KeepOut>
+   <AntiPad Type="SameAsKeepout"/>
+  </DefaultPad>
+  <Drill Type="Square">
+   <Size Unit="um">0</Size>
+  </Drill>
+ </Via>
+</Vias>
