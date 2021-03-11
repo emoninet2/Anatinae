@@ -1,86 +1,86 @@
 <!DOCTYPE Substrate>
 <SubstrateModel>
     <stack BAL_TYPE="NONE" SPECIFIED_PURPOSES="" BAL_NUM="0" PURPOSE_TREATMENT="USE_ALL_EXCEPT_SPECIFIED">
-        <material materialname="AIR" BAL_TYPE="INHERIT" BAL_NUM="0"/>
-        <interface materialname="PERFECT_CONDUCTOR" thick="0" BAL_TYPE="NONE" BAL_NUM="0" groundplane="1" thickunit="micron"/>
-        <material materialname="substrate" thick="700" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <interface materialname="" thick="0" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <material materialname="FOX" thick="0.3" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <interface materialname="" thick="0" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <material materialname="ILD" thick="0.12" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <interface materialname="" thick="0" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <material materialname="DIEL_polyCont" thick="0.153" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <interface materialname="" thick="0" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <material materialname="DIEL_metal1" thick="0.197" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <interface materialname="" thick="0" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <material materialname="DIEL_via1" thick="0.1575" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <interface materialname="" thick="0" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <material materialname="DIEL_metal2" thick="0.2375" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <interface materialname="" thick="0" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <material materialname="DIEL_via2" thick="0.1575" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <interface materialname="" thick="0" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <material materialname="DIEL_metal3" thick="0.2375" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <interface materialname="" thick="0" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <material materialname="DIEL_via3" thick="0.1575" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <interface materialname="" thick="0" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <material materialname="DIEL_metal4" thick="0.2375" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <interface materialname="" thick="0" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <material materialname="DIEL_via4" thick="0.1575" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <interface materialname="" thick="0" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <material materialname="DIEL_metal5" thick="0.2375" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <interface materialname="" thick="0" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <material materialname="DIEL_via5" thick="0.1575" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <interface materialname="" thick="0" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <material materialname="DIEL_metal6" thick="0.2375" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <interface materialname="" thick="0" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <material materialname="DIEL_via6" thick="0.1575" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <interface materialname="" thick="0" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <material materialname="DIEL_metal7" thick="0.2375" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <interface materialname="" thick="0" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <material materialname="DIEL_via7" thick="0.5355" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <interface materialname="" thick="0" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <material materialname="DIEL_metal8" thick="0.9595" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <interface materialname="" thick="0" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <material materialname="DIEL_via8" thick="0.666" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <interface materialname="" thick="0" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <material materialname="DIEL_metal9" thick="3.474" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <interface materialname="" thick="0" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <material materialname="DIEL_via9" thick="0.8" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <interface materialname="" thick="0" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <material materialname="DIEL_metal10" thick="1.49" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <interface materialname="" thick="0" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <material materialname="PASS5b" thick="0.36" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <interface materialname="" thick="0" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <material materialname="PASS6" thick="0.6" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <interface materialname="" thick="0" BAL_TYPE="INHERIT" BAL_NUM="0" thickunit="micron"/>
-        <material materialname="AIR" BAL_TYPE="INHERIT" BAL_NUM="0"/>
+        <material BAL_TYPE="INHERIT" materialname="AIR" BAL_NUM="0"/>
+        <interface groundplane="1" BAL_TYPE="NONE" thick="0" thickunit="micron" materialname="PERFECT_CONDUCTOR" BAL_NUM="0"/>
+        <material BAL_TYPE="INHERIT" materialname="substrate" thick="700" thickunit="micron" BAL_NUM="0"/>
+        <interface BAL_TYPE="INHERIT" thick="" thickunit="micron" materialname="" BAL_NUM="0"/>
+        <material BAL_TYPE="INHERIT" materialname="FOX" thick="0.3" thickunit="micron" BAL_NUM="0"/>
+        <interface BAL_TYPE="INHERIT" thick="" thickunit="micron" materialname="" BAL_NUM="0"/>
+        <material BAL_TYPE="INHERIT" materialname="ILD" thick="0.12" thickunit="micron" BAL_NUM="0"/>
+        <interface BAL_TYPE="INHERIT" thick="" thickunit="micron" materialname="" BAL_NUM="0"/>
+        <material BAL_TYPE="INHERIT" materialname="DIEL_polyCont" thick="0.153" thickunit="micron" BAL_NUM="0"/>
+        <interface BAL_TYPE="INHERIT" thick="" thickunit="micron" materialname="" BAL_NUM="0"/>
+        <material BAL_TYPE="INHERIT" materialname="DIEL_metal1" thick="0.197" thickunit="micron" BAL_NUM="0"/>
+        <interface BAL_TYPE="INHERIT" thick="" thickunit="micron" materialname="" BAL_NUM="0"/>
+        <material BAL_TYPE="INHERIT" materialname="DIEL_via1" thick="0.1575" thickunit="micron" BAL_NUM="0"/>
+        <interface BAL_TYPE="INHERIT" thick="" thickunit="micron" materialname="" BAL_NUM="0"/>
+        <material BAL_TYPE="INHERIT" materialname="DIEL_metal2" thick="0.2375" thickunit="micron" BAL_NUM="0"/>
+        <interface BAL_TYPE="INHERIT" thick="" thickunit="micron" materialname="" BAL_NUM="0"/>
+        <material BAL_TYPE="INHERIT" materialname="DIEL_via2" thick="0.1575" thickunit="micron" BAL_NUM="0"/>
+        <interface BAL_TYPE="INHERIT" thick="" thickunit="micron" materialname="" BAL_NUM="0"/>
+        <material BAL_TYPE="INHERIT" materialname="DIEL_metal3" thick="0.2375" thickunit="micron" BAL_NUM="0"/>
+        <interface BAL_TYPE="INHERIT" thick="" thickunit="micron" materialname="" BAL_NUM="0"/>
+        <material BAL_TYPE="INHERIT" materialname="DIEL_via3" thick="0.1575" thickunit="micron" BAL_NUM="0"/>
+        <interface BAL_TYPE="INHERIT" thick="" thickunit="micron" materialname="" BAL_NUM="0"/>
+        <material BAL_TYPE="INHERIT" materialname="DIEL_metal4" thick="0.2375" thickunit="micron" BAL_NUM="0"/>
+        <interface BAL_TYPE="INHERIT" thick="" thickunit="micron" materialname="" BAL_NUM="0"/>
+        <material BAL_TYPE="INHERIT" materialname="DIEL_via4" thick="0.1575" thickunit="micron" BAL_NUM="0"/>
+        <interface BAL_TYPE="INHERIT" thick="" thickunit="micron" materialname="" BAL_NUM="0"/>
+        <material BAL_TYPE="INHERIT" materialname="DIEL_metal5" thick="0.2375" thickunit="micron" BAL_NUM="0"/>
+        <interface BAL_TYPE="INHERIT" thick="" thickunit="micron" materialname="" BAL_NUM="0"/>
+        <material BAL_TYPE="INHERIT" materialname="DIEL_via5" thick="0.1575" thickunit="micron" BAL_NUM="0"/>
+        <interface BAL_TYPE="INHERIT" thick="" thickunit="micron" materialname="" BAL_NUM="0"/>
+        <material BAL_TYPE="INHERIT" materialname="DIEL_metal6" thick="0.2375" thickunit="micron" BAL_NUM="0"/>
+        <interface BAL_TYPE="INHERIT" thick="" thickunit="micron" materialname="" BAL_NUM="0"/>
+        <material BAL_TYPE="INHERIT" materialname="DIEL_via6" thick="0.1575" thickunit="micron" BAL_NUM="0"/>
+        <interface BAL_TYPE="INHERIT" thick="" thickunit="micron" materialname="" BAL_NUM="0"/>
+        <material BAL_TYPE="INHERIT" materialname="DIEL_metal7" thick="0.2375" thickunit="micron" BAL_NUM="0"/>
+        <interface BAL_TYPE="INHERIT" thick="" thickunit="micron" materialname="" BAL_NUM="0"/>
+        <material BAL_TYPE="INHERIT" materialname="DIEL_via7" thick="0.5355" thickunit="micron" BAL_NUM="0"/>
+        <interface BAL_TYPE="INHERIT" thick="" thickunit="micron" materialname="" BAL_NUM="0"/>
+        <material BAL_TYPE="INHERIT" materialname="DIEL_metal8" thick="0.9595" thickunit="micron" BAL_NUM="0"/>
+        <interface BAL_TYPE="INHERIT" thick="" thickunit="micron" materialname="" BAL_NUM="0"/>
+        <material BAL_TYPE="INHERIT" materialname="DIEL_via8" thick="0.666" thickunit="micron" BAL_NUM="0"/>
+        <interface BAL_TYPE="INHERIT" thick="" thickunit="micron" materialname="" BAL_NUM="0"/>
+        <material BAL_TYPE="INHERIT" materialname="DIEL_metal9" thick="3.474" thickunit="micron" BAL_NUM="0"/>
+        <interface BAL_TYPE="INHERIT" thick="" thickunit="micron" materialname="" BAL_NUM="0"/>
+        <material BAL_TYPE="INHERIT" materialname="DIEL_via9" thick="0.8" thickunit="micron" BAL_NUM="0"/>
+        <interface BAL_TYPE="INHERIT" thick="" thickunit="micron" materialname="" BAL_NUM="0"/>
+        <material BAL_TYPE="INHERIT" materialname="DIEL_metal10" thick="1.49" thickunit="micron" BAL_NUM="0"/>
+        <interface BAL_TYPE="INHERIT" thick="" thickunit="micron" materialname="" BAL_NUM="0"/>
+        <material BAL_TYPE="INHERIT" materialname="PASS5b" thick="0.36" thickunit="micron" BAL_NUM="0"/>
+        <interface BAL_TYPE="INHERIT" thick="" thickunit="micron" materialname="" BAL_NUM="0"/>
+        <material BAL_TYPE="INHERIT" materialname="PASS6" thick="0.6" thickunit="micron" BAL_NUM="0"/>
+        <interface BAL_TYPE="INHERIT" thick="" thickunit="micron" materialname="" BAL_NUM="0"/>
+        <material BAL_TYPE="INHERIT" materialname="AIR" BAL_NUM="0"/>
     </stack>
     <layers>
-        <layer expand="0" angle="90.0" materialname="OD" processRole="1" thick="0.086" precedence="0" bottomrough="" layer="20" index="2" negative="0" pinsOnly="0" thickunit="micron" toprough="" sheet="1" subtype="0"/>
-        <layer expand="0" angle="90.0" materialname="poly" processRole="1" thick="0.1" precedence="0" bottomrough="" layer="21" index="3" negative="0" pinsOnly="0" thickunit="micron" toprough="" sheet="1" subtype="0"/>
-        <layer expand="0" angle="90.0" materialname="metal1" processRole="1" thick="-0.18" precedence="0" bottomrough="" layer="1" index="5" negative="0" pinsOnly="0" thickunit="micron" toprough="" sheet="0" subtype="0"/>
-        <layer expand="0" angle="90.0" materialname="metal2" processRole="1" thick="-0.22" precedence="0" bottomrough="" layer="2" index="7" negative="0" pinsOnly="0" thickunit="micron" toprough="" sheet="0" subtype="0"/>
-        <layer expand="0" angle="90.0" materialname="metal3" processRole="1" thick="-0.22" precedence="0" bottomrough="" layer="3" index="9" negative="0" pinsOnly="0" thickunit="micron" toprough="" sheet="0" subtype="0"/>
-        <layer expand="0" angle="90.0" materialname="metal4" processRole="1" thick="-0.22" precedence="0" bottomrough="" layer="4" index="11" negative="0" pinsOnly="0" thickunit="micron" toprough="" sheet="0" subtype="0"/>
-        <layer expand="0" angle="90.0" materialname="metal5" processRole="1" thick="-0.22" precedence="0" bottomrough="" layer="5" index="13" negative="0" pinsOnly="0" thickunit="micron" toprough="" sheet="0" subtype="0"/>
-        <layer expand="0" angle="90.0" materialname="metal6" processRole="1" thick="-0.22" precedence="0" bottomrough="" layer="6" index="15" negative="0" pinsOnly="0" thickunit="micron" toprough="" sheet="0" subtype="0"/>
-        <layer expand="0" angle="90.0" materialname="metal7" processRole="1" thick="-0.22" precedence="0" bottomrough="" layer="7" index="17" negative="0" pinsOnly="0" thickunit="micron" toprough="" sheet="0" subtype="0"/>
-        <layer expand="0" angle="90.0" materialname="metal8" processRole="1" thick="-0.9" precedence="0" bottomrough="" layer="8" index="19" negative="0" pinsOnly="0" thickunit="micron" toprough="" sheet="0" subtype="0"/>
-        <layer expand="0" angle="90.0" materialname="metal9" processRole="1" thick="-3.4" precedence="0" bottomrough="" layer="9" index="21" negative="0" pinsOnly="0" thickunit="micron" toprough="" sheet="0" subtype="0"/>
-        <layer expand="0" angle="90.0" materialname="metal10" processRole="1" thick="1.45" precedence="0" bottomrough="" layer="10" index="22" negative="0" pinsOnly="0" thickunit="micron" toprough="" sheet="0" subtype="0"/>
+        <layer angle="90.0" processRole="1" negative="0" sheet="1" pinsOnly="0" thick="0.086" thickunit="micron" materialname="OD" layer="20" expand="0" toprough="" bottomrough="" subtype="0" index="2" precedence="0"/>
+        <layer angle="90.0" processRole="1" negative="0" sheet="1" pinsOnly="0" thick="0.1" thickunit="micron" materialname="poly" layer="21" expand="0" toprough="" bottomrough="" subtype="0" index="3" precedence="0"/>
+        <layer angle="90.0" processRole="1" negative="0" sheet="0" pinsOnly="0" thick="-0.18" thickunit="micron" materialname="metal1" layer="1" expand="0" toprough="" bottomrough="" subtype="0" index="5" precedence="0"/>
+        <layer angle="90.0" processRole="1" negative="0" sheet="0" pinsOnly="0" thick="-0.22" thickunit="micron" materialname="metal2" layer="2" expand="0" toprough="" bottomrough="" subtype="0" index="7" precedence="0"/>
+        <layer angle="90.0" processRole="1" negative="0" sheet="0" pinsOnly="0" thick="-0.22" thickunit="micron" materialname="metal3" layer="3" expand="0" toprough="" bottomrough="" subtype="0" index="9" precedence="0"/>
+        <layer angle="90.0" processRole="1" negative="0" sheet="0" pinsOnly="0" thick="-0.22" thickunit="micron" materialname="metal4" layer="4" expand="0" toprough="" bottomrough="" subtype="0" index="11" precedence="0"/>
+        <layer angle="90.0" processRole="1" negative="0" sheet="0" pinsOnly="0" thick="-0.22" thickunit="micron" materialname="metal5" layer="5" expand="0" toprough="" bottomrough="" subtype="0" index="13" precedence="0"/>
+        <layer angle="90.0" processRole="1" negative="0" sheet="0" pinsOnly="0" thick="-0.22" thickunit="micron" materialname="metal6" layer="6" expand="0" toprough="" bottomrough="" subtype="0" index="15" precedence="0"/>
+        <layer angle="90.0" processRole="1" negative="0" sheet="0" pinsOnly="0" thick="-0.22" thickunit="micron" materialname="metal7" layer="7" expand="0" toprough="" bottomrough="" subtype="0" index="17" precedence="0"/>
+        <layer angle="90.0" processRole="1" negative="0" sheet="0" pinsOnly="0" thick="-0.9" thickunit="micron" materialname="metal8" layer="8" expand="0" toprough="" bottomrough="" subtype="0" index="19" precedence="0"/>
+        <layer angle="90.0" processRole="1" negative="0" sheet="0" pinsOnly="0" thick="-3.4" thickunit="micron" materialname="metal9" layer="9" expand="0" toprough="" bottomrough="" subtype="0" index="21" precedence="0"/>
+        <layer angle="90.0" processRole="1" negative="0" sheet="0" pinsOnly="0" thick="1.45" thickunit="micron" materialname="metal10" layer="10" expand="0" toprough="" bottomrough="" subtype="0" index="22" precedence="0"/>
     </layers>
     <vias>
-        <via materialname="odCont" processRole="4" platingthickness="" precedence="0" index2="5" platingdielectricmaterial="AIR" platingthicknessunit="micron" layer="22" index1="2" rough="" subtype="0" platingenabled="0"/>
-        <via materialname="polyCont" processRole="4" platingthickness="" precedence="0" index2="5" platingdielectricmaterial="AIR" platingthicknessunit="micron" layer="23" index1="3" rough="" subtype="0" platingenabled="0"/>
-        <via materialname="via1" processRole="4" platingthickness="" precedence="0" index2="7" platingdielectricmaterial="AIR" platingthicknessunit="micron" layer="11" index1="5" rough="" subtype="0" platingenabled="0"/>
-        <via materialname="via2" processRole="4" platingthickness="" precedence="0" index2="9" platingdielectricmaterial="AIR" platingthicknessunit="micron" layer="12" index1="7" rough="" subtype="0" platingenabled="0"/>
-        <via materialname="via3" processRole="4" platingthickness="" precedence="0" index2="11" platingdielectricmaterial="AIR" platingthicknessunit="micron" layer="13" index1="9" rough="" subtype="0" platingenabled="0"/>
-        <via materialname="via4" processRole="4" platingthickness="" precedence="0" index2="13" platingdielectricmaterial="AIR" platingthicknessunit="micron" layer="14" index1="11" rough="" subtype="0" platingenabled="0"/>
-        <via materialname="via5" processRole="4" platingthickness="" precedence="0" index2="15" platingdielectricmaterial="AIR" platingthicknessunit="micron" layer="15" index1="13" rough="" subtype="0" platingenabled="0"/>
-        <via materialname="via6" processRole="4" platingthickness="" precedence="0" index2="17" platingdielectricmaterial="AIR" platingthicknessunit="micron" layer="16" index1="15" rough="" subtype="0" platingenabled="0"/>
-        <via materialname="via7" processRole="4" platingthickness="" precedence="0" index2="19" platingdielectricmaterial="AIR" platingthicknessunit="micron" layer="17" index1="17" rough="" subtype="0" platingenabled="0"/>
-        <via materialname="via8" processRole="4" platingthickness="" precedence="0" index2="21" platingdielectricmaterial="AIR" platingthicknessunit="micron" layer="18" index1="19" rough="" subtype="0" platingenabled="0"/>
-        <via materialname="via9" processRole="4" platingthickness="" precedence="0" index2="22" platingdielectricmaterial="AIR" platingthicknessunit="micron" layer="19" index1="21" rough="" subtype="0" platingenabled="0"/>
+        <via platingdielectricmaterial="AIR" processRole="4" platingenabled="0" materialname="odCont" platingthicknessunit="micron" index1="2" index2="5" layer="22" rough="" subtype="0" platingthickness="" precedence="0"/>
+        <via platingdielectricmaterial="AIR" processRole="4" platingenabled="0" materialname="polyCont" platingthicknessunit="micron" index1="3" index2="5" layer="23" rough="" subtype="0" platingthickness="" precedence="0"/>
+        <via platingdielectricmaterial="AIR" processRole="4" platingenabled="0" materialname="via1" platingthicknessunit="micron" index1="5" index2="7" layer="11" rough="" subtype="0" platingthickness="" precedence="0"/>
+        <via platingdielectricmaterial="AIR" processRole="4" platingenabled="0" materialname="via2" platingthicknessunit="micron" index1="7" index2="9" layer="12" rough="" subtype="0" platingthickness="" precedence="0"/>
+        <via platingdielectricmaterial="AIR" processRole="4" platingenabled="0" materialname="via3" platingthicknessunit="micron" index1="9" index2="11" layer="13" rough="" subtype="0" platingthickness="" precedence="0"/>
+        <via platingdielectricmaterial="AIR" processRole="4" platingenabled="0" materialname="via4" platingthicknessunit="micron" index1="11" index2="13" layer="14" rough="" subtype="0" platingthickness="" precedence="0"/>
+        <via platingdielectricmaterial="AIR" processRole="4" platingenabled="0" materialname="via5" platingthicknessunit="micron" index1="13" index2="15" layer="15" rough="" subtype="0" platingthickness="" precedence="0"/>
+        <via platingdielectricmaterial="AIR" processRole="4" platingenabled="0" materialname="via6" platingthicknessunit="micron" index1="15" index2="17" layer="16" rough="" subtype="0" platingthickness="" precedence="0"/>
+        <via platingdielectricmaterial="AIR" processRole="4" platingenabled="0" materialname="via7" platingthicknessunit="micron" index1="17" index2="19" layer="17" rough="" subtype="0" platingthickness="" precedence="0"/>
+        <via platingdielectricmaterial="AIR" processRole="4" platingenabled="0" materialname="via8" platingthicknessunit="micron" index1="19" index2="21" layer="18" rough="" subtype="0" platingthickness="" precedence="0"/>
+        <via platingdielectricmaterial="AIR" processRole="4" platingenabled="0" materialname="via9" platingthicknessunit="micron" index1="21" index2="22" layer="19" rough="" subtype="0" platingthickness="" precedence="0"/>
     </vias>
     <substrates/>
 </SubstrateModel>

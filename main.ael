@@ -5,6 +5,10 @@ decl NR;
 decl G;
 decl E;
 
+
+decl macroContext;
+decl library = "Anatinae_lib";
+
 defun HC_setDrawingLayer(layer){
 	if(layer == 1){
 		db_set_entry_layerid( de_get_current_design_context(), db_find_layerid_by_name( de_get_current_design_context(), "m1:drawing"));
@@ -22,7 +26,7 @@ defun HC_setDrawingLayer(layer){
 
 defun HC_removeAll()
 {
-	decl macroContext = de_get_design_context_from_name("Anatinae_lib:main:layout");
+	macroContext = de_get_design_context_from_name("Anatinae_lib:main:layout");
 	de_bring_context_to_top_or_open_new_window(macroContext);
 	de_select_all();
 	db_delete_selected(de_get_current_design_context()); 
@@ -350,7 +354,7 @@ defun HC_drawCrossBridgeExtension(RingInner, RingOuter, Segment, Layer){
 	decl shape = de_end();
 	
 	
-	HC_drawVias(x1,x1+E,y1_in,y1_out, "via8");
+	HC_drawVias(x1,x1+E,y1_in,y1_out, 2);
 	
 	
 	de_add_polygon();
@@ -361,7 +365,7 @@ defun HC_drawCrossBridgeExtension(RingInner, RingOuter, Segment, Layer){
 	de_add_point(x1, y2_in );
 	decl shape = de_end();
 	
-	HC_drawVias(x2-E,x2,y2_in,y2_out, "via8");
+	HC_drawVias(x2-E,x2,y2_in,y2_out, 2);
 	
 
 }
@@ -372,6 +376,116 @@ defun HC_drawVias(x1,x2,y1,y2, via){
 	decl dx = float(0.36);
 	decl dy = float(0.36);
 	decl ds = float(0.34);
+
+
+	decl padstack; 
+	decl layer1; 
+	decl layer2;
+
+
+	switch(via){
+		case 9: {
+			dx = float(3);
+			dy = float(3);
+			ds = float(3);
+			
+			padstack = "via0.36um"; 
+			layer1 = 9; 
+			layer2 = 10;
+			
+			break;
+		}
+		case 8: {
+			dx = float(.36);
+			dy = float(.34);
+			ds = float(.34);
+			
+			padstack = "via0.36um"; 
+			layer1 = 8; 
+			layer2 = 9;
+			
+			break;
+		}
+		case 7: {
+			dx = float(.36);
+			dy = float(.34);
+			ds = float(.34);
+			
+			padstack = "via0.36um"; 
+			layer1 = 7; 
+			layer2 = 8;
+			
+			break;
+		}
+		case 6: {
+			dx = float(.1);
+			dy = float(.1);
+			ds = float(.1);
+			
+			padstack = "via0.1um"; 
+			layer1 = 6; 
+			layer2 = 7;
+			
+			break;
+		}
+		case 5: {
+			dx = float(.1);
+			dy = float(.1);
+			ds = float(.1);
+			
+			padstack = "via0.1um"; 
+			layer1 = 5; 
+			layer2 = 6;
+			
+			break;
+		}
+		case 4: {
+			dx = float(.1);
+			dy = float(.1);
+			ds = float(.1);
+			
+			padstack = "via0.1um"; 
+			layer1 = 4; 
+			layer2 = 5;
+			
+			break;
+		}
+		case 3: {
+			dx = float(.1);
+			dy = float(.1);
+			ds = float(.1);
+			
+			padstack = "via0.1um"; 
+			layer1 = 3; 
+			layer2 = 4;
+			
+			break;
+		}
+		case 2: {
+			dx = float(.1);
+			dy = float(.1);
+			ds = float(.1);
+			
+			padstack = "via0.1um"; 
+			layer1 = 2; 
+			layer2 = 3;
+			
+			break;
+		}
+		case 1: {
+			dx = float(.1);
+			dy = float(.1);
+			ds = float(.1);
+			
+			padstack = "via0.1um"; 
+			layer1 = 1; 
+			layer2 = 2;
+			
+			break;
+		}		
+	}
+
+
 
 	fprintf (stderr, ">>> x1 = %f, x2 = %f, y1 = %f, y2 = %f\n", x1,x2,y1,y2);
 
@@ -400,12 +514,18 @@ defun HC_drawVias(x1,x2,y1,y2, via){
 	decl ix;
 	decl iy;
 
+	
+
+
+
+
 	for(ix = 0;ix<nx;ix++){
 			for(iy = 0;iy<ny;iy++){
 				decl pos_x = x1 + side_x + dx/2 + (dx + ds)*ix;
 				decl pos_y = y1 + side_y + dy/2 + (dy + ds)*iy;
 				//fprintf (stderr, ">>>%f,%f\n", pos_x,pos_y);
-				db_create_constraint_pcb_via(macroContext, "Anatinae_lib", via, pos_x, pos_y);
+				//db_create_constraint_pcb_via(macroContext, "Anatinae_lib", via, pos_x, pos_y);
+				HC_drawPadstackVia(padstack, layer1, layer2, pos_x, pos_y);
 				de_select_range(pos_x, pos_y, pos_x, pos_y, 1, 1);
 				//de_rotate(pos_x, pos_y, angle, 1, 0);
 		}
@@ -453,14 +573,138 @@ defun HC_drawCenterTapArm(center, length, width, angle, Layer, port){
 		
 }
 
+defun HC_drawPadstackVia(padstack, layer1, layer2, x,y){
+
+
+db_create_pcb_via_with_top_bottom_layers(macroContext, library, padstack, db_layerid(layer2), db_layerid(layer1), x, y, 1);
+
+}
+
 
 defun HC_drawCenterTapVias(center, length,width, via, angle){
 
 	de_deselect_all();
+	decl viaName;
+	decl dx;
+	decl dy;
+	decl ds;
 
-	decl dx = float(0.36);
-	decl dy = float(0.36);
-	decl ds = float(0.34);
+	decl padstack; 
+	decl layer1; 
+	decl layer2;
+
+
+	switch(via){
+		case 9: {
+			dx = float(3);
+			dy = float(3);
+			ds = float(3);
+			viaName = "via9";
+			
+			padstack = "via0.36um"; 
+			layer1 = 9; 
+			layer2 = 10;
+			
+			break;
+		}
+		case 8: {
+			dx = float(.36);
+			dy = float(.34);
+			ds = float(.34);
+			viaName = "via8";
+			
+			padstack = "via0.36um"; 
+			layer1 = 8; 
+			layer2 = 9;
+			
+			break;
+		}
+		case 7: {
+			dx = float(.36);
+			dy = float(.34);
+			ds = float(.34);
+			viaName = "via7";
+			
+			padstack = "via0.36um"; 
+			layer1 = 7; 
+			layer2 = 8;
+			
+			break;
+		}
+		case 6: {
+			dx = float(.1);
+			dy = float(.1);
+			ds = float(.1);
+			viaName = "via6";
+			
+			padstack = "via0.1um"; 
+			layer1 = 6; 
+			layer2 = 7;
+			
+			break;
+		}
+		case 5: {
+			dx = float(.1);
+			dy = float(.1);
+			ds = float(.1);
+			viaName = "via5";
+			
+			padstack = "via0.1um"; 
+			layer1 = 5; 
+			layer2 = 6;
+			
+			break;
+		}
+		case 4: {
+			dx = float(.1);
+			dy = float(.1);
+			ds = float(.1);
+			viaName = "via4";
+			
+			padstack = "via0.1um"; 
+			layer1 = 4; 
+			layer2 = 5;
+			
+			break;
+		}
+		case 3: {
+			dx = float(.1);
+			dy = float(.1);
+			ds = float(.1);
+			viaName = "via3";
+			
+			padstack = "via0.1um"; 
+			layer1 = 3; 
+			layer2 = 4;
+			
+			break;
+		}
+		case 2: {
+			dx = float(.1);
+			dy = float(.1);
+			ds = float(.1);
+			viaName = "via2";
+			
+			padstack = "via0.1um"; 
+			layer1 = 2; 
+			layer2 = 3;
+			
+			break;
+		}
+		case 1: {
+			dx = float(.1);
+			dy = float(.1);
+			ds = float(.1);
+			viaName = "via1";
+			
+			padstack = "via0.1um"; 
+			layer1 = 1; 
+			layer2 = 2;
+			
+			break;
+		}		
+	}
+
 
 
 	decl mid_x = center[0];
@@ -504,7 +748,8 @@ defun HC_drawCenterTapVias(center, length,width, via, angle){
 				decl pos_x = x1 + side_x + dx/2 + (dx + ds)*ix;
 				decl pos_y = y1 + side_y + dy/2 + (dy + ds)*iy;
 				//fprintf (stderr, ">>>%f,%f\n", pos_x,pos_y);
-				db_create_constraint_pcb_via(macroContext, "Anatinae_lib", via, pos_x, pos_y);
+				HC_drawPadstackVia(padstack, layer1, layer2, pos_x, pos_y);
+				//db_create_constraint_pcb_via(macroContext, "Anatinae_lib", viaName, pos_x, pos_y);
 				de_select_range(pos_x, pos_y, pos_x, pos_y, 1, 1);
 				de_rotate(mid_x, mid_y, angle, 1, 0);
 		}
@@ -531,6 +776,9 @@ defun main(Radius,Thickness,Spacing,RingCount,Gap, Ext){
 
 	fputs(stderr, "START\n");
 	
+	HC_drawPadstackVia("via0.36um" ,1,2, 5,5)  ;
+	
+	
 	R = Radius;
 	T = Thickness;
 	S = Spacing;
@@ -545,15 +793,15 @@ defun main(Radius,Thickness,Spacing,RingCount,Gap, Ext){
 
 	//HC_drawCenterTapPort({25,25}, 55, 3);
 	
-	HC_drawCenterTap(1,1,0.5,50,T,2,2,"via8");
-	HC_drawCenterTap(1,3,0.5,50,T,3,2,"via8");
-	HC_drawCenterTap(1,6,0.2,50,T,1,4,"via7");
-	HC_drawCenterTap(1,6,0.8,50,T,4,4,"via7");
+	HC_drawCenterTap(1,1,0.5,50,T,2,2,1);
+	HC_drawCenterTap(1,3,0.5,50,T,3,2,1);
+	HC_drawCenterTap(1,6,0.2,50,T,1,4,2);
+	HC_drawCenterTap(1,6,0.8,50,T,4,4,2);
 
 	HC_setDrawingLayer(1);
 	
 
-	
+	//return;
 	
 	
 	decl i;
