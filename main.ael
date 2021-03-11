@@ -5,11 +5,16 @@ decl NR;
 decl G;
 decl E;
 
+decl SegmentLayer = 6;
+decl CrossBridgelayer = 5;
 
 decl macroContext;
 decl library = "Anatinae_lib";
 
 defun HC_setDrawingLayer(layer){
+
+
+
 	if(layer == 1){
 		db_set_entry_layerid( de_get_current_design_context(), db_find_layerid_by_name( de_get_current_design_context(), "m1:drawing"));
 	}
@@ -21,6 +26,12 @@ defun HC_setDrawingLayer(layer){
 	}
 	else if (layer == 4){
 		db_set_entry_layerid( de_get_current_design_context(), db_find_layerid_by_name( de_get_current_design_context(), "m4:drawing"));
+	}
+	else if (layer == 5){
+		db_set_entry_layerid( de_get_current_design_context(), db_find_layerid_by_name( de_get_current_design_context(), "m5:drawing"));
+	}
+	else if (layer == 6){
+		db_set_entry_layerid( de_get_current_design_context(), db_find_layerid_by_name( de_get_current_design_context(), "m6:drawing"));
 	}
 }
 
@@ -354,7 +365,7 @@ defun HC_drawCrossBridgeExtension(RingInner, RingOuter, Segment, Layer){
 	decl shape = de_end();
 	
 	
-	HC_drawVias(x1,x1+E,y1_in,y1_out, 2);
+	HC_drawVias(x1,x1+E,y1_in,y1_out, Layer,SegmentLayer);
 	
 	
 	de_add_polygon();
@@ -365,12 +376,12 @@ defun HC_drawCrossBridgeExtension(RingInner, RingOuter, Segment, Layer){
 	de_add_point(x1, y2_in );
 	decl shape = de_end();
 	
-	HC_drawVias(x2-E,x2,y2_in,y2_out, 2);
+	HC_drawVias(x2-E,x2,y2_in,y2_out, Layer,SegmentLayer);
 	
 
 }
 
-defun HC_drawVias(x1,x2,y1,y2, via){
+defun HC_drawVias(x1,x2,y1,y2, layer1, layer2){
 
 
 	decl dx = float(0.36);
@@ -379,108 +390,72 @@ defun HC_drawVias(x1,x2,y1,y2, via){
 
 
 	decl padstack; 
-	decl layer1; 
-	decl layer2;
+	//decl layer1; 
+	//decl layer2;
 
 
-	switch(via){
+	switch(layer1){
 		case 9: {
 			dx = float(3);
 			dy = float(3);
 			ds = float(3);
-			
 			padstack = "via0.36um"; 
-			layer1 = 9; 
-			layer2 = 10;
-			
 			break;
 		}
 		case 8: {
 			dx = float(.36);
 			dy = float(.34);
-			ds = float(.34);
-			
+			ds = float(.34);			
 			padstack = "via0.36um"; 
-			layer1 = 8; 
-			layer2 = 9;
-			
 			break;
 		}
 		case 7: {
 			dx = float(.36);
 			dy = float(.34);
 			ds = float(.34);
-			
 			padstack = "via0.36um"; 
-			layer1 = 7; 
-			layer2 = 8;
-			
 			break;
 		}
 		case 6: {
 			dx = float(.1);
 			dy = float(.1);
 			ds = float(.1);
-			
 			padstack = "via0.1um"; 
-			layer1 = 6; 
-			layer2 = 7;
-			
 			break;
 		}
 		case 5: {
 			dx = float(.1);
 			dy = float(.1);
 			ds = float(.1);
-			
-			padstack = "via0.1um"; 
-			layer1 = 5; 
-			layer2 = 6;
-			
+			padstack = "via0.1um"; 		
 			break;
 		}
 		case 4: {
 			dx = float(.1);
 			dy = float(.1);
 			ds = float(.1);
-			
-			padstack = "via0.1um"; 
-			layer1 = 4; 
-			layer2 = 5;
-			
+			padstack = "via0.1um"; 	
 			break;
 		}
 		case 3: {
 			dx = float(.1);
 			dy = float(.1);
 			ds = float(.1);
-			
-			padstack = "via0.1um"; 
-			layer1 = 3; 
-			layer2 = 4;
-			
+			padstack = "via0.1um"; 		
 			break;
 		}
 		case 2: {
 			dx = float(.1);
 			dy = float(.1);
 			ds = float(.1);
-			
-			padstack = "via0.1um"; 
-			layer1 = 2; 
-			layer2 = 3;
-			
+			padstack = "via0.1um"; 	
 			break;
 		}
 		case 1: {
 			dx = float(.1);
 			dy = float(.1);
-			ds = float(.1);
-			
+			ds = float(.1);	
 			padstack = "via0.1um"; 
-			layer1 = 1; 
-			layer2 = 2;
-			
 			break;
 		}		
 	}
@@ -574,14 +549,11 @@ defun HC_drawCenterTapArm(center, length, width, angle, Layer, port){
 }
 
 defun HC_drawPadstackVia(padstack, layer1, layer2, x,y){
-
-
-db_create_pcb_via_with_top_bottom_layers(macroContext, library, padstack, db_layerid(layer2), db_layerid(layer1), x, y, 1);
-
+	db_create_pcb_via_with_top_bottom_layers(macroContext, library, padstack, db_layerid(layer2), db_layerid(layer1), x, y, 1);
 }
 
 
-defun HC_drawCenterTapVias(center, length,width, via, angle){
+defun HC_drawCenterTapVias(center, length,width, angle, viaLayer1, viaLayer2){
 
 	de_deselect_all();
 	decl viaName;
@@ -590,117 +562,70 @@ defun HC_drawCenterTapVias(center, length,width, via, angle){
 	decl ds;
 
 	decl padstack; 
-	decl layer1; 
-	decl layer2;
 
 
-	switch(via){
+	switch(viaLayer1){
 		case 9: {
 			dx = float(3);
 			dy = float(3);
 			ds = float(3);
-			viaName = "via9";
-			
-			padstack = "via0.36um"; 
-			layer1 = 9; 
-			layer2 = 10;
-			
+			padstack = "via3um";
 			break;
 		}
 		case 8: {
 			dx = float(.36);
 			dy = float(.34);
 			ds = float(.34);
-			viaName = "via8";
-			
-			padstack = "via0.36um"; 
-			layer1 = 8; 
-			layer2 = 9;
-			
+			padstack = "via0.36um";
 			break;
 		}
 		case 7: {
 			dx = float(.36);
 			dy = float(.34);
 			ds = float(.34);
-			viaName = "via7";
-			
-			padstack = "via0.36um"; 
-			layer1 = 7; 
-			layer2 = 8;
-			
+			padstack = "via0.36um";
 			break;
 		}
 		case 6: {
 			dx = float(.1);
 			dy = float(.1);
 			ds = float(.1);
-			viaName = "via6";
-			
-			padstack = "via0.1um"; 
-			layer1 = 6; 
-			layer2 = 7;
-			
+			padstack = "via0.1um";
 			break;
 		}
 		case 5: {
 			dx = float(.1);
 			dy = float(.1);
 			ds = float(.1);
-			viaName = "via5";
-			
-			padstack = "via0.1um"; 
-			layer1 = 5; 
-			layer2 = 6;
-			
+			padstack = "via0.1um";
 			break;
 		}
 		case 4: {
 			dx = float(.1);
 			dy = float(.1);
 			ds = float(.1);
-			viaName = "via4";
-			
-			padstack = "via0.1um"; 
-			layer1 = 4; 
-			layer2 = 5;
-			
+			padstack = "via0.1um";
 			break;
 		}
 		case 3: {
 			dx = float(.1);
 			dy = float(.1);
 			ds = float(.1);
-			viaName = "via3";
-			
-			padstack = "via0.1um"; 
-			layer1 = 3; 
-			layer2 = 4;
-			
+			padstack = "via0.1um";
 			break;
 		}
 		case 2: {
 			dx = float(.1);
 			dy = float(.1);
 			ds = float(.1);
-			viaName = "via2";
-			
-			padstack = "via0.1um"; 
-			layer1 = 2; 
-			layer2 = 3;
-			
+			padstack = "via0.1um";
 			break;
 		}
 		case 1: {
 			dx = float(.1);
 			dy = float(.1);
 			ds = float(.1);
-			viaName = "via1";
-			
-			padstack = "via0.1um"; 
-			layer1 = 1; 
-			layer2 = 2;
-			
+			padstack = "via0.1um";
 			break;
 		}		
 	}
@@ -748,8 +673,7 @@ defun HC_drawCenterTapVias(center, length,width, via, angle){
 				decl pos_x = x1 + side_x + dx/2 + (dx + ds)*ix;
 				decl pos_y = y1 + side_y + dy/2 + (dy + ds)*iy;
 				//fprintf (stderr, ">>>%f,%f\n", pos_x,pos_y);
-				HC_drawPadstackVia(padstack, layer1, layer2, pos_x, pos_y);
-				//db_create_constraint_pcb_via(macroContext, "Anatinae_lib", viaName, pos_x, pos_y);
+				HC_drawPadstackVia(padstack, viaLayer1, viaLayer2, pos_x, pos_y);
 				de_select_range(pos_x, pos_y, pos_x, pos_y, 1, 1);
 				de_rotate(mid_x, mid_y, angle, 1, 0);
 		}
@@ -760,14 +684,14 @@ defun HC_drawCenterTapVias(center, length,width, via, angle){
 
 
 
-defun HC_drawCenterTap(ring,segment,fraction,armLength,armThickness,port,layer,via){
+defun HC_drawCenterTap(ring,segment,fraction,armLength,armThickness,port,layer1,layer2){
 
 
-	HC_setDrawingLayer(layer);
+	HC_setDrawingLayer(layer1);
 	decl angle = HC_getSegmentAngle(segment);
 	decl center = HC_getSegmentPoint(ring,segment, fraction);
-	HC_drawCenterTapVias(center, armThickness,armThickness, via, angle);
-	HC_drawCenterTapArm(center, armLength, armThickness, angle,layer, port);
+	HC_drawCenterTapVias(center, armThickness,armThickness, angle, layer1, layer2);
+	HC_drawCenterTapArm(center, armLength, armThickness, angle,layer1, port);
 
 }
 
@@ -775,8 +699,6 @@ defun main(Radius,Thickness,Spacing,RingCount,Gap, Ext){
 	HC_removeAll();
 
 	fputs(stderr, "START\n");
-	
-	HC_drawPadstackVia("via0.36um" ,1,2, 5,5)  ;
 	
 	
 	R = Radius;
@@ -793,12 +715,12 @@ defun main(Radius,Thickness,Spacing,RingCount,Gap, Ext){
 
 	//HC_drawCenterTapPort({25,25}, 55, 3);
 	
-	HC_drawCenterTap(1,1,0.5,50,T,2,2,1);
-	HC_drawCenterTap(1,3,0.5,50,T,3,2,1);
-	HC_drawCenterTap(1,6,0.2,50,T,1,4,2);
-	HC_drawCenterTap(1,6,0.8,50,T,4,4,2);
+	HC_drawCenterTap(1,1,0.5,50,T,2,SegmentLayer-1,SegmentLayer);
+	HC_drawCenterTap(1,3,0.5,50,T,3,SegmentLayer-1,SegmentLayer);
+	HC_drawCenterTap(1,6,0.2,50,T,1,SegmentLayer-2,SegmentLayer);
+	HC_drawCenterTap(1,6,0.8,50,T,4,SegmentLayer-2,SegmentLayer);
 
-	HC_setDrawingLayer(1);
+	HC_setDrawingLayer(6);
 	
 
 	//return;
@@ -809,26 +731,28 @@ defun main(Radius,Thickness,Spacing,RingCount,Gap, Ext){
 	
 	for(i = 1;i<=NR;i++){
 		for(ii = 1;ii <= 8 ; ii++){
-			
+			fprintf(stderr, ">>>>> ring %f , segment  %f <<<<<\n", i,ii);
 
 			if(ii == 2 || ii == 6){
 				if(i==NR){
 				
 					if((i%2 ==1 && ii==2) || (i%2 ==0 && ii==6)){
-						HC_drawSegmentFull(i,ii,1);
+						
+						HC_drawSegmentFull(i,ii,SegmentLayer);
 					}
 					else{
-						HC_drawSegmentGapped(i,ii,1);
+						fprintf(stderr, ">>>>> drawing gapped segment <<<<<\n");
+						HC_drawSegmentGapped(i,ii,SegmentLayer);
 					}
 				}
 				else{
-					HC_drawSegmentGapped(i,ii,1);
+					HC_drawSegmentGapped(i,ii,SegmentLayer);
 
 					if((i%2 == 0  && ii == 6) || (i%2 == 1  && ii == 2) ){
-						HC_drawCrossBridge(i, i+1, ii, 2);
-						HC_drawCrossBridgeExtension(i, i+1, ii, 2);
-						
-						HC_drawCrossBridge(i+1, i, ii, 1);
+						fprintf(stderr, ">>>>> drawing cross bridge <<<<<\n");
+						HC_drawCrossBridge(i, i+1, ii, CrossBridgelayer);
+						HC_drawCrossBridgeExtension(i, i+1, ii, CrossBridgelayer);
+						HC_drawCrossBridge(i+1, i, ii, SegmentLayer);
 					}
 					
 				}
@@ -837,7 +761,7 @@ defun main(Radius,Thickness,Spacing,RingCount,Gap, Ext){
 				
 			}else{
 			
-				HC_drawSegmentFull(i,ii,1);
+				HC_drawSegmentFull(i,ii,SegmentLayer);
 			}	
 		}
 	}
