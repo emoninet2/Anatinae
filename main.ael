@@ -5,8 +5,8 @@ decl NR;
 decl G;
 decl E;
 
-decl SegmentLayer = 6;
-decl CrossBridgelayer = 5;
+decl SegmentLayer = 9;
+decl CrossBridgelayer = 8;
 
 decl macroContext;
 decl library = "Anatinae_lib";
@@ -32,6 +32,18 @@ defun HC_setDrawingLayer(layer){
 	}
 	else if (layer == 6){
 		db_set_entry_layerid( de_get_current_design_context(), db_find_layerid_by_name( de_get_current_design_context(), "m6:drawing"));
+	}
+	else if (layer == 7){
+		db_set_entry_layerid( de_get_current_design_context(), db_find_layerid_by_name( de_get_current_design_context(), "m7:drawing"));
+	}
+	else if (layer == 8){
+		db_set_entry_layerid( de_get_current_design_context(), db_find_layerid_by_name( de_get_current_design_context(), "m8:drawing"));
+	}
+	else if (layer == 9){
+		db_set_entry_layerid( de_get_current_design_context(), db_find_layerid_by_name( de_get_current_design_context(), "m9:drawing"));
+	}
+	else if (layer == 10){
+		db_set_entry_layerid( de_get_current_design_context(), db_find_layerid_by_name( de_get_current_design_context(), "m10:drawing"));
 	}
 }
 
@@ -720,7 +732,7 @@ defun main(Radius,Thickness,Spacing,RingCount,Gap, Ext){
 	HC_drawCenterTap(1,6,0.2,50,T,1,SegmentLayer-2,SegmentLayer);
 	HC_drawCenterTap(1,6,0.8,50,T,4,SegmentLayer-2,SegmentLayer);
 
-	HC_setDrawingLayer(6);
+	HC_setDrawingLayer(SegmentLayer);
 	
 
 	//return;

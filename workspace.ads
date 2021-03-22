@@ -1,4 +1,4 @@
-<ADSWorkspace Revision="1" Version="100">
+<ADSWorkspace Revision="3" Version="100">
     <Workspace Name="">
         <LibraryDefs Name="lib.defs" />
         <Library Name="ads_standard_layers" />
@@ -25,5 +25,14 @@
         <Library Name="Anatinae_lib" />
         <Preferences Name="layout.prf" />
         <Substrate Name="Anatinae_lib:tech.subst" />
+        <WrkAel Name="boot.ael" />
+        <WrkAel Name="main.ael" />
+        <Log Name="search_history.log" />
+        <Preferences Name="ads_builtin_lay.prf" />
+        <Preferences Name="Anatinae_lib_lay.prf" />
+        <Preferences Name="Anatinae_lib_sch.prf" />
+        <Cell Name="Anatinae_lib:main" />
+        <Substrate Name="Anatinae_lib:CRN64LP.subst" />
+        <Substrate Name="Anatinae_lib:CRN64LP_reduced.subst" />
     </Workspace>
 </ADSWorkspace>

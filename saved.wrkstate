@@ -1,7 +1,5 @@
 <!DOCTYPE SaveWorkspaceState>
 <SaveWorkspaceState>
-    <Windows>
-        <Substrate height="1001" geom="1,0,3,334,63,1301,961,1920,1080" width="1920" file="tech" y1="-9" lib="Anatinae_lib" x1="-1"/>
-    </Windows>
+    <Windows/>
     <MainWindowTab tab="1"/>
 </SaveWorkspaceState>
