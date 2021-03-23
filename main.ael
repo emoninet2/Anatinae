@@ -2,6 +2,7 @@ decl R;
 decl T;
 decl S;
 decl NR;
+decl G1;
 decl G;
 decl E;
 
@@ -135,9 +136,8 @@ defun HC_getSegmentLength(Ring,Segment){
 	
 	decl mid_xh = (poly[2][0] + poly[3][0])/2.0;
 	decl mid_yh = (poly[2][1] + poly[3][1])/2.0;
-	
-	
-	return sqrt((mid_yh - mid_yl)^2 + (mid_xh - mid_xl)^2);
+		
+	return sqrt((mid_yh - mid_yl)*(mid_yh - mid_yl) + (mid_xh - mid_xl)*(mid_xh - mid_xl));
 	
 }
 
@@ -240,12 +240,12 @@ defun HC_drawSegmentFull(Ring,Segment, Layer){
 }
 
 
-defun HC_drawSegmentGapped(Ring,Segment, Layer){
+defun HC_drawSegmentGapped(Ring,Segment, Layer, Gap){
 
 	HC_setDrawingLayer(Layer);
 
 	decl poly = HC_getSegmentPoly(Ring,Segment);
-	decl Truncate_x = G/2.0;
+	decl Truncate_x = Gap/2.0;
 
 	if(poly [0][1] > poly [1][1] ) 
 		Truncate_x = Truncate_x * -1;
@@ -726,7 +726,7 @@ defun HC_drawCenterTap(ring,segment,fraction,armLength,armThickness,port,layer1,
 
 }
 
-defun main(Radius,Thickness,Spacing,RingCount,Gap, Ext){
+defun main(Radius,Thickness,Spacing,RingCount,Gap,PortGap, Ext, ArmLen){
 	HC_removeAll();
 
 	fputs(stderr, "START\n");
@@ -738,6 +738,7 @@ defun main(Radius,Thickness,Spacing,RingCount,Gap, Ext){
 	NR = RingCount;
 	G = Gap;
 	E = Ext;
+	G1 = PortGap;
 	
 	fprintf (stderr, "Radius:%f\nThickness:%f\nSpacing:%f\nRing Count:%f\nGap Spacing:%f\n\r\n",R,T,S,NR,G);
 
@@ -748,13 +749,21 @@ defun main(Radius,Thickness,Spacing,RingCount,Gap, Ext){
 	
 	
 	db_delete_padstack_definition(library, "crossBridgeVia");
-	HC_createPadstack(library, "crossBridgeVia", T, T);
+	HC_createPadstack(library, "crossBridgeVia", T*0.8, T*0.8);
 	
 	
-	HC_drawCenterTap(1,1,0.5,50,T,2,SegmentLayer-1,SegmentLayer);
-	HC_drawCenterTap(1,3,0.5,50,T,3,SegmentLayer-1,SegmentLayer);
-	HC_drawCenterTap(1,6,0.2,50,T,1,SegmentLayer-2,SegmentLayer);
-	HC_drawCenterTap(1,6,0.8,50,T,4,SegmentLayer-2,SegmentLayer);
+	HC_drawCenterTap(1,1,0.5,ArmLen,T,2,SegmentLayer-1,SegmentLayer);
+	HC_drawCenterTap(1,3,0.5,ArmLen,T,3,SegmentLayer-1,SegmentLayer);
+	
+	
+	decl segLen16;
+	segLen16 = HC_getSegmentLength(1,6);
+	
+	decl CenterPortPos = (G1 + T)/(segLen16);
+	//decl CenterPortPos = 0.2;
+	
+	HC_drawCenterTap(1,6,(1-CenterPortPos)/2.0,  ArmLen,T,1,SegmentLayer-2,SegmentLayer);
+	HC_drawCenterTap(1,6,(1-CenterPortPos)/2.0 + CenterPortPos,ArmLen,T,4,SegmentLayer-2,SegmentLayer);
 
 	HC_setDrawingLayer(SegmentLayer);
 	
@@ -770,7 +779,10 @@ defun main(Radius,Thickness,Spacing,RingCount,Gap, Ext){
 			fprintf(stderr, ">>>>> ring %f , segment  %f <<<<<\n", i,ii);
 
 			if(ii == 2 || ii == 6){
-				if(i==NR){
+				if(i==1 && ii==6){
+						HC_drawSegmentGapped(i,ii,SegmentLayer,G1);
+				}
+				else if(i==NR){
 				
 					if((i%2 ==1 && ii==2) || (i%2 ==0 && ii==6)){
 						
@@ -778,11 +790,12 @@ defun main(Radius,Thickness,Spacing,RingCount,Gap, Ext){
 					}
 					else{
 						fprintf(stderr, ">>>>> drawing gapped segment <<<<<\n");
-						HC_drawSegmentGapped(i,ii,SegmentLayer);
+						HC_drawSegmentGapped(i,ii,SegmentLayer,G);
 					}
 				}
+				
 				else{
-					HC_drawSegmentGapped(i,ii,SegmentLayer);
+					HC_drawSegmentGapped(i,ii,SegmentLayer,G);
 
 					if((i%2 == 0  && ii == 6) || (i%2 == 1  && ii == 2) ){
 						fprintf(stderr, ">>>>> drawing cross bridge <<<<<\n");

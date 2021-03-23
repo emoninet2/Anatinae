@@ -5,9 +5,9 @@ import empro.toolkit.adv as adv
 def main():
 	path=r"C:/Users/hr193/ads/Anatinae"
 	lib=r"Anatinae_lib"
-	subst=r"Anatinae_lib/tech.subst"
+	subst=r"Anatinae_lib/CRN64LP_reduced.subst"
 	substlib=r"Anatinae_lib"
-	substname=r"tech"
+	substname=r"CRN64LP_reduced"
 	cell=r"main"
 	view=r"layout"
 	libS3D=r"simulation/Anatinae_lib/main/_3%D%Viewer/extra/0/proj_libS3D.xml"
