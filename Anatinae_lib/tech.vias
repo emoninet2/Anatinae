@@ -40,4 +40,23 @@
    <Size Unit="um">3</Size>
   </Drill>
  </Via>
+ <Via Name="crossBridgeVia">
+  <DefaultPad>
+   <Pad Type="Square">
+    <Width Unit="um">5.000000</Width>
+   </Pad>
+   <Thermal Type="Str">
+    <Clr Unit="mil">10</Clr>
+    <Conn Unit="mil">5</Conn>
+   </Thermal>
+   <KeepOut Type="None"/>
+   <AntiPad Type="SameAsKeepout"/>
+  </DefaultPad>
+  <Drill Type="Square">
+   <Size Unit="um">5.000000</Size>
+  </Drill>
+  <Paste Type="None">
+   <Exp>0</Exp>
+  </Paste>
+ </Via>
 </Vias>

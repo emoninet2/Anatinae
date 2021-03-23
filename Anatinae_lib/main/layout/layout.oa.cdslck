@@ -6,11 +6,11 @@
 LockStakeVersion               1.1
 LoginName                      hr193
 HostName                       DESKTOP-FVJSSOK
-ProcessIdentifier              10724
-ProcessCreationTime_UTC        1616447462
-ProcessCreationTime_Readable   Mon Mar 22 22:11:02 2021 W. Europe Standard Time
+ProcessIdentifier              16420
+ProcessCreationTime_UTC        1616518148
+ProcessCreationTime_Readable   Tue Mar 23 17:49:08 2021 W. Europe Standard Time
 AppIdentifier                  OA File System Design Manager
 OSType                         win32
 ReasonForPlacingEditLock       OpenAccess edit lock
-FilePathUsedToEditLock         C:\Users\hr193\ads\Anatinae\Anatinae_lib\main\layout\layout.oa.cdslck
-TimeEditLocked                 Mon Mar 22 22:11:08 2021 W. Europe Standard Time
+FilePathUsedToEditLock         C:\Users\hr193\ads\Anatinae\Anatinae_lib\main\layout\layout.oa.cdslck.dirlck
+TimeEditLocked                 Tue Mar 23 17:50:30 2021 W. Europe Standard Time
