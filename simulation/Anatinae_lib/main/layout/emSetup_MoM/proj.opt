@@ -1,7 +1,7 @@
 simulationMode 1;
 simulationTemperature 298.15;
 # simDir "C:\Users\hr193\ads\Anatinae\simulation\Anatinae_lib\main\layout\emSetup_MoM";
-# simTag "M210324220751";
+# simTag "M210324233346";
 logFile "proj.log";
 processPriority Normal;
 mesh_reduction ON;

@@ -890,12 +890,24 @@ defun main(Radius,Thickness,Spacing,RingCount,Gap,PortGap, Ext, ArmLen){
 					}
 				}
 				else if(i==NR){
-					if((NR%2 ==1 && ii==2) || (NR%2 ==0 && ii==6)){
-						HC_drawSegmentGapped(i,ii,SegmentLayer,G);
+					if(NR%2 == 1){
+						if((i%2 ==1 && ii==2) || (i%2 ==0 && ii==6)){
+							HC_drawSegmentGapped(i,ii,SegmentLayer,G);
+						}
+						else{
+							HC_drawSegmentGapped(i,ii,SegmentLayer,G1);
+							
+						}
 					}
 					else{
-						HC_drawSegmentGapped(i,ii,SegmentLayer,G1);
-						
+						if((i%2 ==1 && ii==2) || (i%2 ==0 && ii==6)){
+							HC_drawSegmentGapped(i,ii,SegmentLayer,G1);
+						}
+						else{
+							HC_drawSegmentGapped(i,ii,SegmentLayer,G);
+							
+						}
+					
 					}
 				
 				}

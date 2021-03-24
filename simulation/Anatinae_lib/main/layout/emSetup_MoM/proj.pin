@@ -3,28 +3,28 @@
   <!-- note: all coordinates are in meter -->
   <pin>
     <name>P1</name>
-    <net>P3</net>
+    <net>P1</net>
     <layout>
       <shape>
         <layer>8</layer>
         <purpose>-1</purpose>
         <point>
-          <x>7.6014e-05</x>
-          <y>7.6014e-05</y>
+          <x>9.3692e-05</x>
+          <y>9.3692e-05</y>
         </point>
       </shape>
     </layout>
   </pin>
   <pin>
     <name>P2</name>
-    <net>P3</net>
+    <net>P2</net>
     <layout>
       <shape>
         <layer>8</layer>
         <purpose>-1</purpose>
         <point>
-          <x>-7.6014e-05</x>
-          <y>7.6014e-05</y>
+          <x>-9.3692e-05</x>
+          <y>9.3692e-05</y>
         </point>
       </shape>
     </layout>
@@ -38,7 +38,7 @@
         <purpose>-1</purpose>
         <point>
           <x>6.5e-06</x>
-          <y>-0.0001075</y>
+          <y>-0.0001425</y>
         </point>
       </shape>
     </layout>
@@ -52,7 +52,7 @@
         <purpose>-1</purpose>
         <point>
           <x>-6.5e-06</x>
-          <y>-0.0001075</y>
+          <y>-0.0001425</y>
         </point>
       </shape>
     </layout>

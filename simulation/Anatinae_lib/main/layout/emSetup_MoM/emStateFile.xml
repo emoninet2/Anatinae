@@ -914,6 +914,30 @@
           </MomSimOptMeshLayerSpec>
           <MomSimOptMeshNetSpec version="1.0">
             <MomSimOptMeshNetSpecMap>
+              <keyName>P1</keyName>
+              <MomSimOptMeshNetSpecMapData version="1.0">
+                <netName>P1</netName>
+                <MeshDensityType>0</MeshDensityType>
+                <MeshDensity>0</MeshDensity>
+                <MeshDensityUnit></MeshDensityUnit>
+                <EdgeMeshType>0</EdgeMeshType>
+                <EdgeMeshEdgeWidth>0</EdgeMeshEdgeWidth>
+                <EdgeMeshEdgeWidthUnit></EdgeMeshEdgeWidthUnit>
+                <TLMeshType>0</TLMeshType>
+                <TLMeshCellsInWidth>0</TLMeshCellsInWidth>
+              </MomSimOptMeshNetSpecMapData>
+              <keyName>P2</keyName>
+              <MomSimOptMeshNetSpecMapData version="1.0">
+                <netName>P2</netName>
+                <MeshDensityType>0</MeshDensityType>
+                <MeshDensity>0</MeshDensity>
+                <MeshDensityUnit></MeshDensityUnit>
+                <EdgeMeshType>0</EdgeMeshType>
+                <EdgeMeshEdgeWidth>0</EdgeMeshEdgeWidth>
+                <EdgeMeshEdgeWidthUnit></EdgeMeshEdgeWidthUnit>
+                <TLMeshType>0</TLMeshType>
+                <TLMeshCellsInWidth>0</TLMeshCellsInWidth>
+              </MomSimOptMeshNetSpecMapData>
               <keyName>P3</keyName>
               <MomSimOptMeshNetSpecMapData version="1.0">
                 <netName>P3</netName>
@@ -1010,6 +1034,20 @@
           </MomSimOptSubstrateLayerSpec>
           <MomSimOptSubstrateNetSpec version="1.0">
             <MomSimOptSubstrateNetSpecMap>
+              <keyName>P1</keyName>
+              <MomSimOptSubstrateNetSpecMapData version="1.0">
+                <netName>P1</netName>
+                <MetalExpansion>0</MetalExpansion>
+                <ModelTypeForCurrentsThickConductor>0</ModelTypeForCurrentsThickConductor>
+                <ModelTypeForCurrentsVia>0</ModelTypeForCurrentsVia>
+              </MomSimOptSubstrateNetSpecMapData>
+              <keyName>P2</keyName>
+              <MomSimOptSubstrateNetSpecMapData version="1.0">
+                <netName>P2</netName>
+                <MetalExpansion>0</MetalExpansion>
+                <ModelTypeForCurrentsThickConductor>0</ModelTypeForCurrentsThickConductor>
+                <ModelTypeForCurrentsVia>0</ModelTypeForCurrentsVia>
+              </MomSimOptSubstrateNetSpecMapData>
               <keyName>P3</keyName>
               <MomSimOptSubstrateNetSpecMapData version="1.0">
                 <netName>P3</netName>
@@ -1279,6 +1317,30 @@
         </MomSimOptMeshLayerSpec>
         <MomSimOptMeshNetSpec version="1.0">
           <MomSimOptMeshNetSpecMap>
+            <keyName>P1</keyName>
+            <MomSimOptMeshNetSpecMapData version="1.0">
+              <netName>P1</netName>
+              <MeshDensityType>0</MeshDensityType>
+              <MeshDensity>0</MeshDensity>
+              <MeshDensityUnit></MeshDensityUnit>
+              <EdgeMeshType>0</EdgeMeshType>
+              <EdgeMeshEdgeWidth>0</EdgeMeshEdgeWidth>
+              <EdgeMeshEdgeWidthUnit></EdgeMeshEdgeWidthUnit>
+              <TLMeshType>0</TLMeshType>
+              <TLMeshCellsInWidth>0</TLMeshCellsInWidth>
+            </MomSimOptMeshNetSpecMapData>
+            <keyName>P2</keyName>
+            <MomSimOptMeshNetSpecMapData version="1.0">
+              <netName>P2</netName>
+              <MeshDensityType>0</MeshDensityType>
+              <MeshDensity>0</MeshDensity>
+              <MeshDensityUnit></MeshDensityUnit>
+              <EdgeMeshType>0</EdgeMeshType>
+              <EdgeMeshEdgeWidth>0</EdgeMeshEdgeWidth>
+              <EdgeMeshEdgeWidthUnit></EdgeMeshEdgeWidthUnit>
+              <TLMeshType>0</TLMeshType>
+              <TLMeshCellsInWidth>0</TLMeshCellsInWidth>
+            </MomSimOptMeshNetSpecMapData>
             <keyName>P3</keyName>
             <MomSimOptMeshNetSpecMapData version="1.0">
               <netName>P3</netName>
@@ -1375,6 +1437,20 @@
         </MomSimOptSubstrateLayerSpec>
         <MomSimOptSubstrateNetSpec version="1.0">
           <MomSimOptSubstrateNetSpecMap>
+            <keyName>P1</keyName>
+            <MomSimOptSubstrateNetSpecMapData version="1.0">
+              <netName>P1</netName>
+              <MetalExpansion>0</MetalExpansion>
+              <ModelTypeForCurrentsThickConductor>0</ModelTypeForCurrentsThickConductor>
+              <ModelTypeForCurrentsVia>0</ModelTypeForCurrentsVia>
+            </MomSimOptSubstrateNetSpecMapData>
+            <keyName>P2</keyName>
+            <MomSimOptSubstrateNetSpecMapData version="1.0">
+              <netName>P2</netName>
+              <MetalExpansion>0</MetalExpansion>
+              <ModelTypeForCurrentsThickConductor>0</ModelTypeForCurrentsThickConductor>
+              <ModelTypeForCurrentsVia>0</ModelTypeForCurrentsVia>
+            </MomSimOptSubstrateNetSpecMapData>
             <keyName>P3</keyName>
             <MomSimOptSubstrateNetSpecMapData version="1.0">
               <netName>P3</netName>
@@ -1714,7 +1790,7 @@
         <Pins>
           <Pin version="1.1">
             <pinName>P1</pinName>
-            <netName>P3</netName>
+            <netName>P1</netName>
             <pinNum>1</pinNum>
             <toolInfo/>
             <compInfo/>
@@ -1725,7 +1801,7 @@
                 <layerIdName>m8:drawing</layerIdName>
                 <shapeType>point</shapeType>
                 <points>
-                  <stdItem>7.6014e-05:7.6014e-05</stdItem>
+                  <stdItem>9.3692e-05:9.3692e-05</stdItem>
                 </points>
               </PinShapeDef>
             </shapes>
@@ -1733,7 +1809,7 @@
           </Pin>
           <Pin version="1.1">
             <pinName>P2</pinName>
-            <netName>P3</netName>
+            <netName>P2</netName>
             <pinNum>2</pinNum>
             <toolInfo/>
             <compInfo/>
@@ -1744,7 +1820,7 @@
                 <layerIdName>m8:drawing</layerIdName>
                 <shapeType>point</shapeType>
                 <points>
-                  <stdItem>-7.6014e-05:7.6014e-05</stdItem>
+                  <stdItem>-9.3692e-05:9.3692e-05</stdItem>
                 </points>
               </PinShapeDef>
             </shapes>
@@ -1763,7 +1839,7 @@
                 <layerIdName>m7:drawing</layerIdName>
                 <shapeType>point</shapeType>
                 <points>
-                  <stdItem>6.5e-06:-0.0001075</stdItem>
+                  <stdItem>6.5e-06:-0.0001425</stdItem>
                 </points>
               </PinShapeDef>
             </shapes>
@@ -1782,7 +1858,7 @@
                 <layerIdName>m7:drawing</layerIdName>
                 <shapeType>point</shapeType>
                 <points>
-                  <stdItem>-6.5e-06:-0.0001075</stdItem>
+                  <stdItem>-6.5e-06:-0.0001425</stdItem>
                 </points>
               </PinShapeDef>
             </shapes>
