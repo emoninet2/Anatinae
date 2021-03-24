@@ -850,8 +850,8 @@ defun main(Radius,Thickness,Spacing,RingCount,Gap,PortGap, Ext, ArmLen){
 	db_delete_padstack_definition(library, "crossBridgeVia");
 	HC_createPadstack(library, "crossBridgeVia", T*0.8, T*0.8);
 	
-	HC_drawCenterTap(4,1,0.5,ArmLen,T,2,SegmentLayer-1,SegmentLayer);
-	HC_drawCenterTap(4,3,0.5,ArmLen,T,3,SegmentLayer-1,SegmentLayer);
+	HC_drawCenterTap(4,1,0.5,ArmLen,T,1,SegmentLayer-1,SegmentLayer);
+	HC_drawCenterTap(4,3,0.5,ArmLen,T,2,SegmentLayer-1,SegmentLayer);
 	
 	
 	decl segLen16;
@@ -860,8 +860,8 @@ defun main(Radius,Thickness,Spacing,RingCount,Gap,PortGap, Ext, ArmLen){
 	decl CenterPortPos = (G1 + T)/(segLen16);
 	//decl CenterPortPos = 0.2;
 	
-	HC_drawCenterTap(1,6,(1-CenterPortPos)/2.0,  ArmLen,T,1,SegmentLayer-2,SegmentLayer);
-	HC_drawCenterTap(1,6,(1-CenterPortPos)/2.0 + CenterPortPos,ArmLen,T,4,SegmentLayer-2,SegmentLayer);
+	HC_drawCenterTap(1,6,(1-CenterPortPos)/2.0,  ArmLen,T,4,SegmentLayer-2,SegmentLayer);
+	HC_drawCenterTap(1,6,(1-CenterPortPos)/2.0 + CenterPortPos,ArmLen,T,3,SegmentLayer-2,SegmentLayer);
 
 	HC_setDrawingLayer(SegmentLayer);
 	
