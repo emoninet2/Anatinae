@@ -759,10 +759,17 @@ defun HC_drawCenterTapVias(center, length,width, angle, viaLayer1, viaLayer2){
 
 	de_deselect_all();
 }
+defun HC_drawArmOuter(fraction,armLength,armThickness,port,layer){
+	
+	HC_setDrawingLayer(layer);
+	decl angle = HC_getSegmentAngle(6);
+	decl center = HC_getSegmentPoint(NR,6, fraction);
+
+	HC_drawCenterTapArm(center, armLength, armThickness, angle,layer, port);
+}
 
 
-
-defun HC_drawCenterTap(ring,segment,fraction,armLength,armThickness,port,layer1,layer2){
+defun HC_drawArmCenterTap(ring,segment,fraction,armLength,armThickness,port,layer1,layer2){
 
 
 	HC_setDrawingLayer(layer1);
@@ -850,8 +857,8 @@ defun main(Radius,Thickness,Spacing,RingCount,Gap,PortGap, Ext, ArmLen){
 	db_delete_padstack_definition(library, "crossBridgeVia");
 	HC_createPadstack(library, "crossBridgeVia", T*0.8, T*0.8);
 	
-	HC_drawCenterTap(1,1,0.5,ArmLen,T,1,SegmentLayer-1,SegmentLayer);
-	HC_drawCenterTap(1,3,0.5,ArmLen,T,2,SegmentLayer-1,SegmentLayer);
+	HC_drawArmCenterTap(1,1,0.5,ArmLen,T,1,SegmentLayer-1,SegmentLayer);
+	HC_drawArmCenterTap(1,3,0.5,ArmLen,T,2,SegmentLayer-1,SegmentLayer);
 	
 	
 	decl segLen16;
@@ -860,8 +867,10 @@ defun main(Radius,Thickness,Spacing,RingCount,Gap,PortGap, Ext, ArmLen){
 	decl CenterPortPos = (G1 + T)/(segLen16);
 	//decl CenterPortPos = 0.2;
 	
-	HC_drawCenterTap(NR,6,(1-CenterPortPos)/2.0,  ArmLen,T,4,SegmentLayer-2,SegmentLayer);
-	HC_drawCenterTap(NR,6,(1-CenterPortPos)/2.0 + CenterPortPos,ArmLen,T,3,SegmentLayer-2,SegmentLayer);
+	HC_drawArmOuter((1-CenterPortPos)/2.0,  ArmLen,T,4,SegmentLayer);
+	HC_drawArmOuter((1-CenterPortPos)/2.0 + CenterPortPos,  ArmLen,T,3,SegmentLayer);
+	//HC_drawArmCenterTap(NR,6,(1-CenterPortPos)/2.0,  ArmLen,T,4,SegmentLayer-2,SegmentLayer);
+	//HC_drawArmCenterTap(NR,6,(1-CenterPortPos)/2.0 + CenterPortPos,ArmLen,T,3,SegmentLayer-2,SegmentLayer);
 
 	HC_setDrawingLayer(SegmentLayer);
 	
