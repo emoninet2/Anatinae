@@ -3,55 +3,55 @@
   <!-- note: all coordinates are in meter -->
   <pin>
     <name>P1</name>
-    <net>P4</net>
+    <net>P3</net>
     <layout>
       <shape>
-        <layer>7</layer>
+        <layer>8</layer>
         <purpose>-1</purpose>
         <point>
-          <x>-4.5e-06</x>
-          <y>-0.0001075</y>
+          <x>7.6014e-05</x>
+          <y>7.6014e-05</y>
         </point>
       </shape>
     </layout>
   </pin>
   <pin>
     <name>P2</name>
-    <net>P4</net>
+    <net>P3</net>
     <layout>
       <shape>
         <layer>8</layer>
         <purpose>-1</purpose>
         <point>
-          <x>9.0863e-05</x>
-          <y>9.0863e-05</y>
+          <x>-7.6014e-05</x>
+          <y>7.6014e-05</y>
         </point>
       </shape>
     </layout>
   </pin>
   <pin>
     <name>P3</name>
-    <net>P4</net>
+    <net>P3</net>
     <layout>
       <shape>
-        <layer>8</layer>
+        <layer>7</layer>
         <purpose>-1</purpose>
         <point>
-          <x>-9.0863e-05</x>
-          <y>9.0863e-05</y>
+          <x>6.5e-06</x>
+          <y>-0.0001075</y>
         </point>
       </shape>
     </layout>
   </pin>
   <pin>
     <name>P4</name>
-    <net>P4</net>
+    <net>P3</net>
     <layout>
       <shape>
         <layer>7</layer>
         <purpose>-1</purpose>
         <point>
-          <x>4.5e-06</x>
+          <x>-6.5e-06</x>
           <y>-0.0001075</y>
         </point>
       </shape>

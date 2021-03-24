@@ -850,18 +850,18 @@ defun main(Radius,Thickness,Spacing,RingCount,Gap,PortGap, Ext, ArmLen){
 	db_delete_padstack_definition(library, "crossBridgeVia");
 	HC_createPadstack(library, "crossBridgeVia", T*0.8, T*0.8);
 	
-	HC_drawCenterTap(4,1,0.5,ArmLen,T,1,SegmentLayer-1,SegmentLayer);
-	HC_drawCenterTap(4,3,0.5,ArmLen,T,2,SegmentLayer-1,SegmentLayer);
+	HC_drawCenterTap(1,1,0.5,ArmLen,T,1,SegmentLayer-1,SegmentLayer);
+	HC_drawCenterTap(1,3,0.5,ArmLen,T,2,SegmentLayer-1,SegmentLayer);
 	
 	
 	decl segLen16;
-	segLen16 = HC_getSegmentLength(1,6);
+	segLen16 = HC_getSegmentLength(NR,6);
 	
 	decl CenterPortPos = (G1 + T)/(segLen16);
 	//decl CenterPortPos = 0.2;
 	
-	HC_drawCenterTap(1,6,(1-CenterPortPos)/2.0,  ArmLen,T,4,SegmentLayer-2,SegmentLayer);
-	HC_drawCenterTap(1,6,(1-CenterPortPos)/2.0 + CenterPortPos,ArmLen,T,3,SegmentLayer-2,SegmentLayer);
+	HC_drawCenterTap(NR,6,(1-CenterPortPos)/2.0,  ArmLen,T,4,SegmentLayer-2,SegmentLayer);
+	HC_drawCenterTap(NR,6,(1-CenterPortPos)/2.0 + CenterPortPos,ArmLen,T,3,SegmentLayer-2,SegmentLayer);
 
 	HC_setDrawingLayer(SegmentLayer);
 	
@@ -876,30 +876,49 @@ defun main(Radius,Thickness,Spacing,RingCount,Gap,PortGap, Ext, ArmLen){
 		for(ii = 1;ii <= 8 ; ii++){
 			fprintf(stderr, ">>>>> ring %f , segment  %f <<<<<\n", i,ii);
 
+			
 			if(ii == 2 || ii == 6){
-				if(i==1 && ii==6){
-						HC_drawSegmentGapped(i,ii,SegmentLayer,G1);
-				}
-				else if(i==NR){
-				
-					if((i%2 ==1 && ii==2) || (i%2 ==0 && ii==6)){
-						
+				if(i==1){
+					if((NR%2 ==1 && ii==2) || (NR%2 ==0 && ii==6)){
 						HC_drawSegmentFull(i,ii,SegmentLayer);
 					}
 					else{
-						fprintf(stderr, ">>>>> drawing gapped segment <<<<<\n");
 						HC_drawSegmentGapped(i,ii,SegmentLayer,G);
+						HC_drawCrossBridge(i+1, i, ii, CrossBridgelayer);
+						HC_drawCrossBridgeExtension(i+1, i, ii, CrossBridgelayer);
+						HC_drawCrossBridge(i, i+1, ii, SegmentLayer);
 					}
 				}
+				else if(i==NR){
+					if((NR%2 ==1 && ii==2) || (NR%2 ==0 && ii==6)){
+						HC_drawSegmentGapped(i,ii,SegmentLayer,G);
+					}
+					else{
+						HC_drawSegmentGapped(i,ii,SegmentLayer,G1);
+						
+					}
 				
+				}
 				else{
 					HC_drawSegmentGapped(i,ii,SegmentLayer,G);
-
-					if((i%2 == 0  && ii == 6) || (i%2 == 1  && ii == 2) ){
-						fprintf(stderr, ">>>>> drawing cross bridge <<<<<\n");
-						HC_drawCrossBridge(i, i+1, ii, CrossBridgelayer);
-						HC_drawCrossBridgeExtension(i, i+1, ii, CrossBridgelayer);
-						HC_drawCrossBridge(i+1, i, ii, SegmentLayer);
+					
+					
+					if(NR%2 == 1){
+						if((i%2 == 0  && ii == 2) || (i%2 == 1  && ii == 6) ){
+							fprintf(stderr, ">>>>> drawing cross bridge <<<<<\n");
+							HC_drawCrossBridge(i+1, i, ii, CrossBridgelayer);
+							HC_drawCrossBridgeExtension(i+1, i, ii, CrossBridgelayer);
+							HC_drawCrossBridge(i, i+1, ii, SegmentLayer);
+						}
+					}
+					else{
+						if((i%2 == 0  && ii == 6) || (i%2 == 1  && ii == 2) ){
+							fprintf(stderr, ">>>>> drawing cross bridge <<<<<\n");
+							HC_drawCrossBridge(i+1, i, ii, CrossBridgelayer);
+							HC_drawCrossBridgeExtension(i+1, i, ii, CrossBridgelayer);
+							HC_drawCrossBridge(i, i+1, ii, SegmentLayer);
+						}
+					
 					}
 					
 				}

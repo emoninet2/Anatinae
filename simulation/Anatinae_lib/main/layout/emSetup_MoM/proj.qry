@@ -1,11 +1,11 @@
 #Momentum: B.2021.10.414 (*) built: Oct 15 2020 
-#Momentum Date and Time: Tue Mar 23 23:01:39 2021
+#Momentum Date and Time: Wed Mar 24 22:11:39 2021
 
 Overall database status : 1 (file present and valid)
 
-Frequency range : from 0.003076145764 GHz to 20 GHz.
+Frequency range : from 0.003076145764 GHz to 100 GHz.
 
-Requested frequency range : from 0.003076145764 GHz to 20 GHz.
+Requested frequency range : from 0.003076145764 GHz to 100 GHz.
 
 Individual status fields : (0 = FALSE, 1 = TRUE)
  File exists             : 1
