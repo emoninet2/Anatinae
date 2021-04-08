@@ -877,10 +877,7 @@ defun HC_len2seg(len){
 }
 
 defun main(Radius,Thickness,Spacing,RingCount,Gap,PortGap, Ext, ArmLen){
-	
 
-	
-	
 	fputs(stderr, "END TEST HOLLA HEY HEY HEY\n");
 
 	HC_removeAll();
@@ -897,9 +894,6 @@ defun main(Radius,Thickness,Spacing,RingCount,Gap,PortGap, Ext, ArmLen){
 	G1 = PortGap;
 	
 	fprintf (stderr, "Radius:%f\nThickness:%f\nSpacing:%f\nRing Count:%f\nGap Spacing:%f\n\r\n",R,T,S,NR,G);
-
-
-
 
 	HC_setDrawingLayer(2);
 
@@ -1009,7 +1003,7 @@ defun main(Radius,Thickness,Spacing,RingCount,Gap,PortGap, Ext, ArmLen){
 	//decl segpos = HC_len2seg(50);
 	//fprintf(stderr, "terminates at ring %f segmetn %f\n", segpos[0],segpos[1]);
 
-	
+	de_deselect_all();
 	fputs(stderr, "END\n\n");
 }
 
