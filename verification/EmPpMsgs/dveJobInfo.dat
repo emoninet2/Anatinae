@@ -1,5 +1,0 @@
-jobName=EmPpMsgs
-jobType=emprep
-designName=Anatinae_lib:main:layout
-ruleFilePath=
-addInfo="EM preprocessor messages displayed as DRC errors"

@@ -1,9 +1,0 @@
-<!DOCTYPE SaveWorkspaceState>
-<SaveWorkspaceState>
-    <Windows>
-        <Schematic width="1150" x1="446" cell="cell_1" y1="239" height="595" view="schematic" lib="Anatinae_lib" geom="1,0,1,447,277,1150,595,1920,1080"/>
-        <Substrate width="1920" x1="-1" y1="-9" file="CRN64LP" height="1001" lib="Anatinae_lib" geom="1,0,3,466,44,901,961,1920,1080"/>
-        <DDS name="main.dds"/>
-    </Windows>
-    <MainWindowTab tab="2"/>
-</SaveWorkspaceState>

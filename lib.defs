@@ -1,3 +1,0 @@
-INCLUDE $HPEESOF_DIR/oalibs/analog_rf.defs
-DEFINE Anatinae_lib Anatinae_lib
-ASSIGN Anatinae_lib libMode shared

@@ -1,0 +1,8 @@
+create_item("HC180","HC180","X",16,-1,NULL,"Component Parameters",NULL,"%43?global %;%d:%t %# %44?0%:%31?%C%:_net%c%;%;%e %b%r%8?%29?%:%30?%p %:%k%?[%1i]%;=%p %;%;%;%e%e","HC180","%t%b%r%38?%:\n%30?%s%:%k%?[%1i]%;=%s%;%;%e%e%;","",3,NULL,0,
+create_parm("Radius","Radius",68608,"StdFormSet",-1,prm("StdForm","250")),
+create_parm("Thickness","Thickness",68608,"StdFormSet",-1,prm("StdForm","5")),
+create_parm("Spacing","Spacing",68608,"StdFormSet",-1,prm("StdForm","3")),
+create_parm("RingCount","RingCount",68608,"StdFormSet",-1,prm("StdForm","2")),
+create_parm("Gap","Gap",68608,"StdFormSet",-1,prm("StdForm","2")),
+create_parm("Ext","Ext",68608,"StdFormSet",-1,prm("StdForm","5")),
+create_parm("ArmLen","ArmLen",68608,"StdFormSet",-1,prm("StdForm","80")));

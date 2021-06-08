@@ -1,0 +1,3 @@
+INCLUDE $HPEESOF_DIR/oalibs/analog_rf.defs
+DEFINE HC180_TSMC65_lib HC180_TSMC65_lib
+ASSIGN HC180_TSMC65_lib libMode shared
